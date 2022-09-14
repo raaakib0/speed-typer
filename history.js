@@ -1,9 +1,9 @@
 const histories = document.getElementById("histories");
 
-function addHistory(questionText, timeTakenRcv, errorCount) {
+function addHistory(questionText, timeTakenValueRcv, errorCount) {
   const newRow = document.createElement("div");
   newRow.classList.add("card");
-  let timeTaken = Math.floor(timeTakenRcv);
+  let timeTaken = Math.floor(timeTakenValueRcv);
   newRow.innerHTML = `
   <h3>${questionText}</h3>
   <div>
