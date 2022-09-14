@@ -17,6 +17,7 @@ fetch("./texts.json")
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
+    console.log(data);
   });
 
 // checks the user typed character and displays accordingly
@@ -132,8 +133,8 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
-
-
-  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
+  const timeSpent = Math.floor((currentTime - startTime) / 1000);
+  // Math.floor(timeSpent);
+  // console.log(startTime);
+  document.getElementById("show-time").innerHTML = `${startTime  ? timeSpent : 0} seconds`;
 }, 1000);
